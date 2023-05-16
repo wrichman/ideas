@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #box {
+        background-color: lightblue;
+        width: 5rem;
+        height: 5rem;
+        justify-content: center;
+        display : flex;
+        align-items: center;
+    }
+
+    #box.circle {
+        border-radius: 50%;
+        background-color: black;
+        color : white;
+        justify-content: center;
+        display : flex;
+        align-items: center;
+        transition: all 4s ease-in-out 1s;
+        
+    }
+
+    #box.fade-away {
+        opacity: 0;
+        transition: all 3s;
+    }
+</style>
+
+<body>
+    <div id = "box">
+        Click Me!
+    </div>
+</body>
+
+<script src = "./event-loop_callbacks.js">
+</script>
+
+</html>
