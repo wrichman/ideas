@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function makePizza(toppings = []) {
+      const pizzaPromise = new Promise(function (resolve, reject) {
+        if (toppings.includes('bacon')) {
+          reject('F you');
+        }
+        timeToMake = toppings.length * 200;
+        setTimeout(function () {
+          // when i'm ready, resolve
+          resolve('pizza is ready!');
+          // if something goes wrong, reject
+        }, timeToMake)
+      });
+      return pizzaPromise;
+    }
+
+    function handleError(err) {
+      console.log('NO');
+      console.log(`your error is ${err}`);
+    }
+    const pizza = makePizza(['peas', 'pep', 'bacon']);
+    // to get value, chain "then" onto it (callback)
+    console.log(pizza);
+    pizza.then(function (pizza) {
+      console.log(pizza);
+    }).catch(handleError);
+
+    // concurrent pizza
+    const pizza2 = makePizza([]);
+    pizza2.then(function (pizza) {
+      console.log(pizza);
+    }).catch(handleError);
+
+  </script>
+</body>
+
+</html>

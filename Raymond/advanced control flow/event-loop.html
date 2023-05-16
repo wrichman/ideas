@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+<body>
+  <style>
+    .go {
+      margin: 5rem;
+      background: white;
+      padding: 5rem;
+      width: 25rem;
+      height: 25rem;
+      transition: all 0.2s;
+    }
+    .circle {
+      border-radius: 50%;
+    }
+    .red {
+      background-color: red;
+    }
+  </style>
+  <div class="go">Click Me</div>
+  <script>
+    const wait = (ms = 0) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    wait(2000).then(() => {
+      console.log('Done');
+    })
+
+    function animate(e) {
+      const el = e.currentTarget;
+      el.textContent = 'Go'
+      wait(200).then(() => {
+        el.classList.add('circle');
+      })
+    }
+
+    const go = document.querySelector('.go');
+
+    go.addEventListener('click', animate);
+    go.addEventListener('clickxxx', function(e) {
+      const el = e.currentTarget;
+      el.textContent = 'GO!'
+      setTimeout(function () {
+        el.classList.add('circle')
+        setTimeout(function () {
+          el.classList.add('red');
+        }, 500);
+      }, 2000);     
+    })
+
+    
+  </script>
+</body>
+</html>
