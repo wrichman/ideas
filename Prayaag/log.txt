@@ -1,0 +1,5 @@
+May 16th:
+    - Promises, Callbacks, Event Handling
+        - Learned about Propagation, bubbling, capturing, etc.
+    - Refactored callback hell code with promises
+    
