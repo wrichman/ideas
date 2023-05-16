@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function wait(ms = 0) {
+      return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+      })
+    }
+
+    // async function go() {
+    //   console.log('start');
+    //   await wait(2000);
+    //   console.log('ending');
+    // }
+
+    // go();
+
+    // async function fd() {}
+
+    // const arrowFn = async () => {}
+
+    // window.addEventListener('click', async function () {
+
+    // })
+
+    // const person = {
+    //   sayHi: async function() {
+
+    //   },
+    // }
+
+    function makePizza(toppings=[]) {
+      const pizzaPromise = new Promise(function (resolve, reject) {
+        if (toppings.includes('bacon')) {
+          reject('F you');
+        }
+        timeToMake = toppings.length * 200;
+        setTimeout(function () {
+          // when i'm ready, resolve
+          resolve('pizza is ready!');
+        }, timeToMake)
+      })
+      return pizzaPromise
+    }
+
+    async function go() {
+      try {
+        const pizza = await makePizza(['bacon']);
+        console.log(pizza);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    // async function makeDinner() {
+    //   const pizza = await makePizza(['pep']);
+    //   console.log(pizza);
+    // }
+
+    // makeDinner();
+
+
+  </script>
+</body>
+</html>
