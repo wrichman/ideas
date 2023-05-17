@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Promises</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <script>
+   function makePizza(toppings) {
+    const pizzaPromise = new Promise(function(resolve,reject){
+
+    setTimeout(function(){
+      
+      resolve('Here is your pizza with the toppings ${toppings.join('')}');},1000);
+      //这个join是join了哪里的东西？？
+    } );
+    return pizzaPromise;
+   }
+
+   const pepperoniPromise = makePizza(['pepperoni']);
+   const canadianPromise = makePizza(['pepperoni','mushrooms','onions']);
+
+   console.log(pepperoniPromise);
+   pepperoniPromise.then(funcation(pizza)){
+    //calback function??
+    console.log('Go it!');
+    console.log(pizza);
+   }
+
+   console.log(pizza);
+
+  </script>
+</body>
+
+</html>
