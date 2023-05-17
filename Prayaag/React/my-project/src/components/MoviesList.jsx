@@ -15,13 +15,15 @@ function MoviesList({...movieTitles}) {
     })
 
     const [ movies, setMovies ] = useState(allMovies);
+    const [ filteredMovies, setFilteredMovies ] = useState(allMovies);
 
     const removeMovie = (title) => {
         setMovies(movies.filter(mv => mv !== title));
+        setFilteredMovies(filteredMovies.filter(mv => mv !== title));
     }
 
     const updateMovies = (userIn) => {
-        userIn === '' ? setMovies(allMovies) : setMovies(allMovies.filter(mv => mv.toLowerCase().includes(userIn)))
+        userIn === '' ? setMovies(filteredMovies) : setMovies(movies.filter(mv => mv.toLowerCase().includes(userIn.toLowerCase())))
     }
 
     return (
