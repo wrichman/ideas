@@ -39,7 +39,7 @@
     function makePizza(toppings=[]) {
       const pizzaPromise = new Promise(function (resolve, reject) {
         if (toppings.includes('bacon')) {
-          reject('F you');
+          reject('you used bacon');
         }
         timeToMake = toppings.length * 200;
         setTimeout(function () {
@@ -50,21 +50,49 @@
       return pizzaPromise
     }
 
-    async function go() {
-      try {
-        const pizza = await makePizza(['bacon']);
-        console.log(pizza);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
     // async function makeDinner() {
     //   const pizza = await makePizza(['pep']);
     //   console.log(pizza);
     // }
 
     // makeDinner();
+
+    // async function go() {
+    //   try {
+    //     const pizza = await makePizza(['bacon']);
+    //     console.log(pizza);
+    //   } catch (err) {
+    //     console.log('OH NOO');
+    //     console.log(err);
+    //   }
+    // }
+
+    // go()
+
+    function handleError(err) {
+      console.log('NOOO');
+      console.log(err);
+    }
+
+    // async function will always return promises
+    async function go() {
+      const pizza = await makePizza(['bacon']);
+      console.log(pizza);
+      return pizza;
+    }
+
+    // go().then(result => {
+    //   console.log(result);
+    // }).catch(handleError);
+
+    function makeSafe(fn, errorHandler) {
+      return function() {
+        fn().catch(errorHandler);
+      }
+    }
+
+    const safeGo = makeSafe(go, handleError);
+    console.log(safeGo());
 
 
   </script>
