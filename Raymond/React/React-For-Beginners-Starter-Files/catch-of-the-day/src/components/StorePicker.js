@@ -4,7 +4,7 @@ class StorePicker extends React.Component {
   // each react class needs a render
   render() {
     return (
-      <form className='store-selection'>
+      <form className='store-selector'>
         { /* comment */}
         <h2>Please Enter A Store</h2>
         <input type="text" required placeholder='Store Name'/>
