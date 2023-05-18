@@ -1,0 +1,37 @@
+.top-title {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.title {
+    text-decoration-style: double;
+    text-decoration: underline;
+}
+
+.top-header h1 {
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace ;
+}
+
+.ofthe {
+    margin: 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-style : italic;
+}
+
+.tagline {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color : rgb(225, 106, 106);
+}
+  
+
+.taglineContainer {
+    margin : 0.25rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
