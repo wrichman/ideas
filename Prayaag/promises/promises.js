@@ -56,13 +56,13 @@ function getData(type) {
 
 // These all resolve asynchronously.
 
-// const user_data = getData("integer");
-// const contact_data = getData("pizza");
-// const bio_data = getData("JSON");
+const user_data = getData("integer");
+const contact_data = getData("string");
+const bio_data = getData("JSON");
 
 // const largePromise = Promise.all([user_data, contact_data, bio_data]);
 
-// This .then() only runs when all of the promises in the above array are responded to (either resolved or rejected)
+// // This .then() only runs when all of the promises in the above array are responded to (either resolved or rejected)
 
 // largePromise.then((response) => {
 //     response.forEach((data, id) => {
@@ -72,6 +72,11 @@ function getData(type) {
 // .catch((err) => {
 //     console.log(err);
 // })
+
+const largePromise = Promise.allSettled([user_data, contact_data, bio_data]); // These are all promises to data
+largePromise.then(response => {
+    response.forEach(resp => resp.status === "fulfilled" ? console.log(`Success : ${resp.value.key}`) : console.error(`Failure : ${resp.reason}`));
+})
 
 
 // Promise.race()
@@ -104,16 +109,16 @@ that will give it to us the quickest.
 // know for sure whether they'll all resolve or not. We do the following:
 
 
-const data1 = getData("string");
-const data2 = getData("non-string");
+// const data1 = getData("string");
+// const data2 = getData("non-string");
 
-Promise.allSettled([data1, data2])
-.then(([resp1, resp2]) => {
-    if (resp1.status === "fulfilled") console.log(resp1.value);
-    else console.error(resp1.reason);
+// Promise.allSettled([data1, data2])
+// .then(([resp1, resp2]) => {
+//     if (resp1.status === "fulfilled") console.log(resp1.value);
+//     else console.error(resp1.reason);
 
-    if (resp2.status === "fulfilled") console.log(resp2.value);
-    else console.error(resp2.reason);
-})
-.catch(err => console.error(err));
+//     if (resp2.status === "fulfilled") console.log(resp2.value);
+//     else console.error(resp2.reason);
+// })
+// .catch(err => console.error(err));
 

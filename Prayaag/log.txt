@@ -2,4 +2,10 @@ May 16th:
     - Promises, Callbacks, Event Handling
         - Learned about Propagation, bubbling, capturing, etc.
     - Refactored callback hell code with promises
+
+May 17th:
+    - Event handling in React
+    - Client-side Routing in React with BrowserRouter
+    - Stateless functional components && more about class components
+    
         
