@@ -1,6 +1,6 @@
 
 const wait = (ms = 0) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
         setTimeout(resolve, ms);
     })
 }
@@ -37,7 +37,7 @@ const animate = (e) => {
         return wait(1000);
     })
     .then(() => {
-        box.classList.remove("fade-out");
+        box.classList.remove("fade-away");
         box.innerHTML = "Click Me!";
         console.log("Done Animating");
     })
