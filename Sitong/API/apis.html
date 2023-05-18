@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>APIs</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+  <p class="user"></p>
+  <script>
+
+    const endpoint = 'http://api.github.com/users/wesbos';
+    const userEl = document.querySelector('.user');
+
+
+//第二种用await的方法
+  async function displayUser(username){
+
+  const response = await fetch(endpoint);
+  const data = await response.json();  
+  console.log(data);
+  console.log(data.blog);
+  console.log(data.name);
+  console.log(data.location);
+  userEl.textContent = `${data.name} - ${data.blog}`;
+
+}  //response 和 promise 的区别？？？
+
+  function handleError(err) {
+    console.log('OH NO!');
+    console.log(err);
+    userEl.textContent = `Something went wrong: ${err}`
+  }
+    
+  displayUser('wesbos');
+
+    //第一种用promise的方法
+    //fetch library
+    const wesPromise = fetch(endpoint);
+    wesPromise.then(response => {    //1st promise
+      return response.json();  
+    }).then(data => {    //2nd promise
+      console.log(data);
+      console.log(data.blog);
+      console.log(data.name);
+      console.log(data.location);
+      userEl.textContent = `${data.name} - ${data.blog}`;
+    }).catch(handleError)
+
+    function handleError(err) {
+    console.log('OH NO!');
+    console.log(err);
+  }
+  </script>
+</body>
+
+</html>
