@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The DOM</title>
+  <link rel="stylesheet" href="../../base.css">
+
+</head>
+
+<body>
+
+  <img class="nice cool" src="https://picsum.photos/600" />
+
+  <div class="items">
+    <div class="item">
+      <img class="custom" data-last="bos" data-name="wes" src="https://picsum.photos/200" />
+      <img data-name="kait" src="https://picsum.photos/200" />
+      <img data-name="lux" src="https://picsum.photos/200" />
+      <p>Hi I'm a item</p>
+    </div>
+    <div class="item item2">
+      <img src="https://picsum.photos/200" />
+      <h2>This is where a heading goes</h2>
+      <p>Hi I'm a item</p>
+    </div>
+    <img src="https://source.unsplash.com/random/300x300" />
+    <p>Hi I'm a item</p>
+    <p>Hi I'm a item</p>
+  </div>
+  <style>
+    img {
+      transition: all 0.2s;
+    }
+
+    .round {
+      border-radius: 50%;
+      transform: rotate(1turn) scale(2);
+      box-shadow: 0 0 10px black;
+    }
+  </style>
+  <script src="./the-dom.js"></script>
+</body>
+
+</html>
