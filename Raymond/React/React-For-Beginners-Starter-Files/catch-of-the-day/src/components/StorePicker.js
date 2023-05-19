@@ -20,7 +20,7 @@ function StorePicker() {
     // 3. Change the page to /store/wahtever-they-entered
     navigate(`/store/${storeName}`);
   };
-
+  
   // binding in react, we need to bind our own methods
   // componentDidMount() {
   //   console.log('Mounted');
