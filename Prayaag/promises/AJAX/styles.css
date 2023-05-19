@@ -1,0 +1,16 @@
+.title {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+}
+
+.loading {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
