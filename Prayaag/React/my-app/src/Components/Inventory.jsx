@@ -3,7 +3,6 @@ import FishCard from "./FishCard";
 import fishes from "../sampleFishes.js";
 import { wait } from "../helpers.js";
 import "bootstrap/dist/css/bootstrap.css"
-import { render } from '@testing-library/react';
 
 // emmulating getting data from api
 const getData = async () => {
@@ -11,13 +10,12 @@ const getData = async () => {
   return fishes;
 }
 
-function Inventory() {
+function Inventory({ order, updateOrder }) {
   
   const [ fishList, setFishList ] = useState([]);
-  const searchItem = useRef('');
+  const [ searchItem, setSearchItem ] = useState("");
 
   useEffect(() => {
-
     const collectData = async () => {
       const data = await getData();
       setFishList(Object.values(data));
@@ -26,20 +24,29 @@ function Inventory() {
     collectData();
   }, [])
 
-  useEffect(() => {}, [searchItem])
-
   const renderFishList = () => {
-    if (fishList.lengh === 0) {
-      return "Loading... Please Wait.";
+    if (fishList.length === 0) {
+      return <p>Loading... Please Wait</p>;
     } else {
-      
+      let fishes = fishList;
+
+      if (searchItem !== "") {
+        fishes = fishes.filter(fish => fish.name.toLowerCase().includes(searchItem.toLowerCase())); 
+      } 
+    
+      fishes = fishes.map((fish, id) => <FishCard fishKey = {`${fish}${id + 1}`} key = {id} fish = {fish} order = {order} updateOrder = {updateOrder}></FishCard>);
+
+      return fishes;
     }
 
   }
 
   return (
     <div>
-      <input onChange = {e => searchItem.current = e.target.value} className = "m-2" placeholder="What fish do you want?"></input>
+      <div className='fish-input-and-button'>
+      <input onChange = {e => setSearchItem(e.target.value)} className = "m-2" placeholder="What fish do you want?"></input>
+      <button>Go to Cart</button>
+      </div>
       <div className='fish-list'>
         {renderFishList()}
       </div>
