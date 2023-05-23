@@ -76,3 +76,26 @@ buttons.forEach(btn => {
     }, { once : true });
 })
 
+
+const questions = [
+    {title : "Who are you?"},
+    {title : "How do you identify yourself?", cancellable : true},
+    {title : "Favorite Superhero?"},
+]
+
+const asyncMap = async (array, callback) => {
+
+    let results = [];
+    for (item of array) {
+        results.push(await callback(item));
+    }
+    return results;
+
+}
+
+async function go() {
+    const data = await asyncMap(questions, ask);
+    console.log(data);
+}
+
+go();

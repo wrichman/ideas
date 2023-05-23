@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
 
-
 }
 
 .title {
@@ -34,4 +33,36 @@
     justify-content: center;
     display: flex;
     align-items: center;
+}
+
+.fishCard {
+    outline: black;
+    outline-style: solid;
+    background-color: whitesmoke;
+    
+}
+
+.fishTitle {
+    color: rgb(114, 185, 185);
+    text-shadow: black;
+    font-size: medium;
+    text-decoration: underline;
+}
+
+.fish-price {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    text-align: right;
+    text-decoration: underline;
+
+}
+
+.fish-desc {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: black;
+    text-align: left;
+    
+
 }
