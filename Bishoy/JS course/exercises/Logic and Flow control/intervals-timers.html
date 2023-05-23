@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Intervals and Timers</title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <script>
+        function buzzer() {
+            console.log('ENNGGGG');
+        }
+
+        setTimeout(buzzer, 500);
+
+        function setImmediateInterval(funToRun, ms) {
+            funToRun();
+            return setInterval(buzzer, 2000);
+        }
+        setImmediateInterval(buzzer, 2000);
+
+    </script>
+</body>
+
+</html>
