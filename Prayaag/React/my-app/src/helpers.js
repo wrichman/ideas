@@ -1,9 +1,19 @@
 // Helper functions module
 
+const formatPrice = (cents) => {
+    return `\$${cents/100}`;
+}
+
 function randomElement(array) {
     const index = Math.floor(Math.random() * array.length);
 
     return array[index];
+}
+
+const wait = async (ms = 0) => {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    })
 }
 
 function getFunName() {
@@ -33,4 +43,4 @@ function getFunName() {
     return `${randomElement(adjectives)}-${randomElement(adjectives)}-${randomElement(nouns)}`;
 }   
 
-export { getFunName };
+export { getFunName, formatPrice, wait };

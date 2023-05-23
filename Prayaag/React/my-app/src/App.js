@@ -19,7 +19,7 @@ function App() {
 
       <Inventory></Inventory>
 
-      <Order></Order>
+      {/* <Order></Order> */}
 
     </div>
   );
