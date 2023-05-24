@@ -29,7 +29,7 @@ function App() {
   }, []);
 
 
-  const updateOrder = (key, qty) => {
+  const updateOrder = (key, val) => {
     if (typeof(order) != "object") {
       console.log(typeof(order));
       console.error("not an object")
@@ -38,7 +38,7 @@ function App() {
 
     setOrder(prev => {
       const newOrder = {...prev};
-      if (key in newOrder) newOrder[key] += 1;
+      if (key in newOrder) newOrder[key] += val;
       else newOrder[key] = 1;
       return newOrder;
     });
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="catch-of-the-day">
-      <button onClick = {() => navigate('/')}>---Go Back---</button>
+      <button className='m-2' onClick = {() => navigate('/')}>---Go Back---</button>
 
       <div className = "menu">
         <Header tagline = "Fresh Seafood Market"> </Header>
@@ -55,7 +55,7 @@ function App() {
       <Inventory fishes = {{...fishes}} updateOrder = {updateOrder} ></Inventory>
       </React.StrictMode>
 
-      <Order fishes = {{...fishes}}></Order>
+      <Order fishes = {{...fishes}} order = {{...order}}></Order>
 
     </div>
   );

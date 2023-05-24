@@ -17,12 +17,12 @@ function FishCard({fish, fishKey, updateOrder}) {
                 <h3 className = "fishTitle">{fish.name}<p className = "fish-price">Price: {formatPrice(fish.price)}</p></h3>
                 <p className = "dish-desc">{fish.desc}</p>
                 <button onClick = {() => {
-                    updateOrder(fishKey);
+                    updateOrder(fishKey, 1);
                     setQty(prev => prev + 1);
                 }} disabled = {fish.status !== "available"} className = "btn m-1 btn-primary">+</button>
                 <span>{qty}</span>
                 <button onClick = {() => {
-                    updateOrder(fishKey);
+                    updateOrder(fishKey, -1);
                     setQty(prev => prev - 1);
                 }} disabled = {fish.status !== "available" || qty === 0} className = "btn m-1 btn-danger">-</button>
                 <p className={getStatusClass(fish.status)}>Status: {fish.status}</p>

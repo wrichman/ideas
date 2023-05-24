@@ -93,3 +93,8 @@
     outline: black;
     outline-style: dotted;
 }
+
+.order-card {
+    justify-content: center;
+    align-items: center;
+}
