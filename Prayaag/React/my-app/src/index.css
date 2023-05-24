@@ -63,6 +63,38 @@
     font-size: small;
     color: black;
     text-align: left;
-    
 
+}
+
+.fish-input-and-button {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.order-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    outline: black;
+    outline-style: dashed;
+    background-color: rgb(187, 213, 226);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+
+.items-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: black;
+    outline-style: dotted;
+}
+
+.order-card {
+    justify-content: center;
+    align-items: center;
 }
