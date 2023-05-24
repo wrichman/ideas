@@ -25,7 +25,7 @@ function Order({ fishes, order }) {
     </div>
     <div className="m-3 items-container">
       <ul>
-        {Object.keys(order).filter(key => order[key] !== 0).map(fish => <OrderCard fish = {fishes[fish]} qty = {order[fish]}></OrderCard>)}
+        {Object.keys(order).filter(key => order[key] !== 0).map(fish => <OrderCard key = {fish} fish = {fishes[fish]} qty = {order[fish]}></OrderCard>)}
       </ul>
       <span className='m-5'>{formatTotal()}</span>
     </div>

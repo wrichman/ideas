@@ -11,7 +11,6 @@ function Inventory({ fishes, updateOrder }) {
       return <p className = "m-2">Loading... Please Wait</p>;
     } else {
       const fishIds = Object.keys(fishes).filter(fish => fishes[fish].name.toLowerCase().includes(searchItem.toLowerCase())); 
-      console.log(fishIds, searchItem);
       return fishIds.map((fish, id) => <FishCard fishKey = {fish} key = {id} fish = {fishes[fish]} updateOrder = {updateOrder}></FishCard>);
     }
 
