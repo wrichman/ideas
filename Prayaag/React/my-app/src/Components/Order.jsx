@@ -1,6 +1,7 @@
 import React from 'react';
+import OrderCard from './OrderCard.jsx';
 
-function Order({ fishList, order }) {
+function Order({ fishes, order }) {
   
   
   return (
@@ -9,7 +10,9 @@ function Order({ fishList, order }) {
       <h1>Your Order</h1>
     </div>
     <div className="m-3 items-container">
-      <p>an order</p>
+      <ul>
+        {/* {Object.keys(fishes).map(key => <li key = {key}>{fishes[key]}</li>)} */}
+      </ul>
     </div>
     </>
     
