@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Promises</title>
+    <link rel="stylesheet" href="../../base.css">
+</head>
+
+<body>
+    <script>
+        function makePizza(toppings) {
+            const pizzaPromise = new Promise((resolve, reject) => {
+                resolve(`Here is your pizza🍕 with the toppings ${toppings.join(' ')}`);
+            }, 1000);
+            return pizzaPromise;
+        }
+        const pepperoniPromise = makePizza(['pepperoni']);
+        const canadianPromise = makePizza(['pepperonni', 'mushrooms', 'onions']);
+
+
+        console.log(pepperoniPromise);
+        // console.log(canadianPromise);
+        pepperoniPromise.then((pizza) => {
+            console.log('Ahh go it!');
+            console.log(pizza);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>New, This, Prototypes and Classes</title>
+    <link rel="stylesheet" href="../../../base.css">
+</head>
+
+<body>
+    <button class="one">Button 1</button>
+    <button class="two">Button 2</button>
+
+    <script>
+        const myDate = new Date('August 11, 2025');
+        console.dir(myDate);
+        console.log(myDate.getFullYear());
+        const names = ['wes', 'kait'];
+        function Pizza() {
+            console.log('Making a pizza');
+        }
+        const pepperoniPizza = new Pizza();
+        console.log(pepperoniPizza);
+        console.log(pepperoniPizza.constructor);
+        console.log(pepperoniPizza instanceof Pizza);
+
+        const button1 = document.querySelector('.one');
+        const button2 = document.querySelector('.two');
+
+        function tellMeAboutTheButton() {
+            console.log(this);
+        }
+
+        button1.addEventListener('click', tellMeAboutTheButton);
+        button2.addEventListener('click', tellMeAboutTheButton);
+    </script>
+</body>
+
+</html>
