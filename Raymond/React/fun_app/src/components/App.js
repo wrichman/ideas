@@ -6,6 +6,7 @@ import Clock from "./Clock";
 
 function App() {
   let temp = useRef();
+  
   function getLocation() {
     const successCallback = (position) => {
       const lat = position.coords.latitude;

@@ -5,9 +5,9 @@ import Order from "./Order";
 import Inventory from "./Inventory";
 import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
-import firebaseApp from "../base";
+// import firebaseApp from "../base";
 // import { ref } from "firebase/database";
-import "firebase/database"
+// import "firebase/database"
 
 function App() {
   // state gets value, setState is function
@@ -19,23 +19,23 @@ function App() {
   const { storeId } = useParams();
   console.log(storeId);
 
-  useEffect(() => {
-    firebaseApp.database()
-      .ref(`${storeId}/fishes`)
-      .on('value', (snapshot) => {
-        if (snapshot.val())
-          setState((prev) => {
-            return {
-              ...prev,
-              fishes: snapshot.val()
-            };
-          });
-      });
-  }, []);
+  // useEffect(() => {
+  //   firebaseApp.database()
+  //     .ref(`${storeId}/fishes`)
+  //     .on('value', (snapshot) => {
+  //       if (snapshot.val())
+  //         setState((prev) => {
+  //           return {
+  //             ...prev,
+  //             fishes: snapshot.val()
+  //           };
+  //         });
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    firebaseApp.database().ref(`${storeId}/fishes`).update(state.fishes);
-  }, [state.fishes]);
+  // useEffect(() => {
+  //   firebaseApp.database().ref(`${storeId}/fishes`).update(state.fishes);
+  // }, [state.fishes]);
 
 
   const addFish = fish => {
