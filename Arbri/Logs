@@ -25,3 +25,45 @@ Friday May 24
 - upload documents - ask client to fix list of technologies used
 - Assisted in fixing bugs in back end that prevented emails from being sent 
 - Finished basic courses (advanced in weekend)   
+
+
+
+Monday May 27
+
+- Refreshed on some advanced react and js skills
+- Eng sprint meeting with team
+- Worked on reporting total savings automatically when a user clicks an interested button
+
+More on what was done
+
+Reporting
+Tech Savings - Found (Reveal) + Awarded (Claimed w/ BuiltFirst)
+Grants - Found (Interested In) + Awarded (Somewhere Airtable)
+Automations - Found ("Request Upgrades") + Awarded (Upgraded getting paid)
+Financing - Found (Submit financing request) + Awarded (Upgraded getting paid)
+Top Upgrades - Found (Request Intro button clicked) + Awarded (Upgraded getting paid)
+Steps
+Found - Create a zap that ties into all all found first!
+Tech Savings - Ray started on it in Zapier
+Grants - Doesn't exist - interested in - Zapier
+Top Upgrades - Zapier
+Financing - Airtable
+Automations - Zapier
+Log anytime a user clicks "Request Upgrade" in #leads-opps-and-deals or another slack channel
+Tomorrows full team
+All Found Savings
+All Found Savings for Each Category
+Awarded
+??
+
+Some Blockers:
+
+1. 
+change the app ui and think from the user’s perspective
+figure out the purpose of the request upgrade button
+ 2.   problem with grant partners?? where do we find the corresponding partners?
+what is the role of the referralEmails and anonReferralEmails
+what about the grant_writers_profiles? what do they do?
+how come in the code we do: grantWriters?.slice(upgrade.fields.id, 5 + upgrade.fields.id) to get the grant writer profile pictures
+how do we match grant writers to grants?
+3.   should we be allowed to upvote top upgrades to “interested in grants?” (edited) 
