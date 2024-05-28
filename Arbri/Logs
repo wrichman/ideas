@@ -67,3 +67,9 @@ what about the grant_writers_profiles? what do they do?
 how come in the code we do: grantWriters?.slice(upgrade.fields.id, 5 + upgrade.fields.id) to get the grant writer profile pictures
 how do we match grant writers to grants?
 3.   should we be allowed to upvote top upgrades to “interested in grants?” (edited) 
+
+
+- Tuesday 
+
+- Worked on Grant indexer project, essentially added a button on website that allows admins to fill out manual grant creation form
+- Gave some input on new sign up page (live savings counter)
