@@ -17,7 +17,7 @@ CYAN = "\033[36m"
 RESET = "\033[0m"
 print(RESET)
 
-client = OpenAI(api_key='sk-proj-PC5zazHI76EQ32REdDD9T3BlbkFJLZWNjK5j5y0bSpPAcgza')  # Set your OpenAI API key
+client = OpenAI(api_key='')  # Set your OpenAI API key
 
 # Initialize Firecrawl with your API key
 firecrawl = FirecrawlApp(
