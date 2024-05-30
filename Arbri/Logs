@@ -73,3 +73,8 @@ how do we match grant writers to grants?
 
 - Worked on Grant indexer project, essentially added a button on website that allows admins to fill out manual grant creation form
 - Gave some input on new sign up page (live savings counter)
+
+- Wednesday
+
+- Worked on Grant Indexer(used firecrawl api to scrape website and openAI to cleanly display info)
+- Working on automating adding grants to airtable
