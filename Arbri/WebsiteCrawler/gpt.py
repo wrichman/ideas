@@ -178,7 +178,7 @@ with open('GrantScraper.csv', 'w', newline='') as csvfile:
 
         print(f"{RESET}{data_extracted}")
 
-        data_dict = dict(item.split(': ', len(links)) for item in data_extracted.split('\n') if item.strip())
+        data_dict = dict(item.split(': ', 1) for item in data_extracted.split('\n') if item.strip())
         print({BLUE})
         print(data_dict)
 
