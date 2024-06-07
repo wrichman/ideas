@@ -115,4 +115,6 @@ Thursday June 6
 
 
 Friday June 7 
-- 
+- Translated python code to js (lots of bug fixes along the way)
+- Implemented input field and going to link grantscraper to it so that the whole team can use it
+- Pushed more grants to airtable
