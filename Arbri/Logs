@@ -128,3 +128,16 @@ Monday June 10
 Tuesday June 11
 - Did some full stack coding to link the grant scraper to the app
 - Helped Ray with auto sign in feature
+
+Wednesday June 12
+- Implemented first and last name field for users to enter and will update airtable users
+- added logic that will never show if you've already done this
+
+Thursday June 13
+- Added grant scraper notifications and notifications for the name form
+- changed scraper prompt 
+- added financing partners 
+
+
+Friday June 14 
+- Executed some referrals
